@@ -1,0 +1,22 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: latest
+  pre_build:
+    commands:
+      - echo pre_build phase
+      - npm install
+      - npm run lint
+  build:
+    commands:
+      - echo build phase
+      - npm run build
+  post_build:
+    commands:
+      - echo post_build phase
+artifacts:
+  files:
+    - "**/*"
+  base-directory: dist

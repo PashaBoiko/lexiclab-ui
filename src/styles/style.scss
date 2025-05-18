@@ -1,0 +1,14 @@
+@import "variables/variables";
+
+//Components
+@import "components/v-toolbar-title";
+
+body {
+  background: $default-color;
+}
+
+ul {
+  li {
+    list-style-type: none;
+  }
+}
