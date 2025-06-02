@@ -1,0 +1,13 @@
+.l-app-bar {
+  &--title {
+    font-size: 32px;
+    color: $white;
+    font-weight: bold;
+  }
+
+  &--logo {
+    font-size: 32px;
+    color: $warning-color;
+    margin-right: 10px;
+  }
+}

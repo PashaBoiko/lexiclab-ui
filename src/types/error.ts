@@ -1,10 +1,10 @@
 export interface IError {
-    status: string;
-    message: string;
+  status: string;
+  message: string;
 }
 
 export interface IValidationError {
-    status: string;
-    message: string;
-    fields: Record<string, string>;
+  status: string;
+  message: string;
+  fields: Record<string, string>;
 }

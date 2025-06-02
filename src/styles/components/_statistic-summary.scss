@@ -1,0 +1,21 @@
+.l-statistic-summary {
+  &_item {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+  }
+  &_icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    margin-right: 10px;
+  }
+  &_number {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  &_text {
+    font-size: 12px;
+  }
+}

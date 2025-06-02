@@ -1,4 +1,4 @@
-interface IService<T>{
+interface IService<T> {
   getItem: (key: string) => T;
   setItem: (key: string, value: string) => void;
 }
@@ -8,7 +8,10 @@ type IServiceName = "localStorage" | "sessionStorage";
 export default class StorageManager<T> {
   service!: IService<T>;
 
-  constructor(private serviceName: IServiceName, private storageKey: string) {
+  constructor(
+    private serviceName: IServiceName,
+    private storageKey: string,
+  ) {
     this.determineService(this.serviceName);
   }
 

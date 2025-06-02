@@ -4,7 +4,7 @@ import errorHandler from "../../utils/error-handler.ts";
 export type ILanguageItem = {
   key: string;
   title: string;
-}
+};
 
 export interface IQuestionType {
   key: string;
@@ -30,8 +30,8 @@ class ConfigRDO {
 
   public async get(): Promise<IConfigPublicResponse> {
     try {
-      return await http.get('/config/public', {});
-    } catch (err: unknown){
+      return await http.get("/config/public", {});
+    } catch (err: unknown) {
       errorHandler(err);
     }
   }

@@ -1,35 +1,38 @@
-import * as VueRouter from 'vue-router';
+import * as VueRouter from "vue-router";
 
-import { authorized } from "../services/auth/auth.ts";
+import { isAuthorized } from "../services/auth/auth.ts";
 
-import Home from "../components/Home.vue";
-import Quiz from "../components/quiz/Quiz.vue";
+import Home from "@/components/Home.vue";
+import Quiz from "@/modules/quiz/components/Quiz.vue";
 
-import Dictionary from "../components/dictionary/Dictionary.vue";
-import Archive from "../components/archive/Archive.vue";
+import Dictionary from "@/modules/dictionary/components/Dictionary.vue";
+import Archive from "@/components/archive/Archive.vue";
+import Profile from "@/modules/profile/components/Profile.vue";
+import Statistic from "@/modules/statistic/components/Statistic.vue";
 
-import Login from "../components/auth/Login.vue";
-import Register from "../components/auth/Register.vue";
+import Login from "@/modules/auth/components/Login.vue";
+import Register from "@/modules/auth/components/Register.vue";
+import ResetPassword from "@/modules/auth/components/ResetPassword.vue";
 
 const routes = [
   {
-    path: '/',
+    path: "/",
     name: "Home",
     component: Home,
     meta: {
-      private: true
+      private: true,
     },
   },
   {
-    path: '/quiz',
+    path: "/quiz",
     name: "Quiz",
     component: Quiz,
     meta: {
       private: true,
-    }
+    },
   },
   {
-    path: '/dictionary',
+    path: "/dictionary",
     name: "Dictionary",
     component: Dictionary,
     meta: {
@@ -37,7 +40,7 @@ const routes = [
     },
   },
   {
-    path: '/archive',
+    path: "/archive",
     name: "Archive",
     component: Archive,
     meta: {
@@ -45,22 +48,49 @@ const routes = [
     },
   },
   {
-    path: '/login',
+    path: "/statistic",
+    name: "Statistic",
+    component: Statistic,
+    meta: {
+      private: true,
+    },
+  },
+  {
+    path: "/profile",
+    name: "Profile",
+    component: Profile,
+    meta: {
+      private: true,
+    },
+  },
+  {
+    path: "/login",
     name: "Login",
     component: Login,
     meta: {
       private: false,
-    }
+      notAuthorizedOnly: true,
+    },
   },
   {
-    path: '/register',
+    path: "/register",
     name: "Register",
     component: Register,
     meta: {
-      private: false
-    }
-  }
-]
+      private: false,
+      notAuthorizedOnly: true,
+    },
+  },
+  {
+    path: "/reset-password",
+    name: "ResetPassword",
+    component: ResetPassword,
+    meta: {
+      private: false,
+      notAuthorizedOnly: true,
+    },
+  },
+];
 
 const router = VueRouter.createRouter({
   history: VueRouter.createWebHashHistory(),
@@ -69,8 +99,11 @@ const router = VueRouter.createRouter({
 
 // @ts-ignore
 router.beforeEach((to, from, next) => {
-  if (to.meta.private && !authorized.value) next({ name: 'Login' })
-  next()
-})
+  if (to.meta.private && !isAuthorized.value) next({ name: "Login" });
+
+  if (to.meta.notAuthorizedOnly && isAuthorized.value) next({ name: "Home" });
+
+  next();
+});
 
 export default router;

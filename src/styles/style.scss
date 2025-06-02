@@ -1,14 +1,35 @@
 @import "variables/variables";
 
 //Components
-@import "components/v-toolbar-title";
+@import "components/app-bar";
+@import "components/logo";
+@import "components/menu";
+@import "components/tables";
+@import "components/statistic-summary";
 
 body {
   background: $default-color;
+  font-family:
+    system-ui,
+    -apple-system,
+    "Roboto";
 }
 
 ul {
   li {
     list-style-type: none;
   }
+}
+
+.v-application {
+  background: $default-color;
+}
+
+.middle-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding-left: 20px;
+  padding-right: 20px;
 }

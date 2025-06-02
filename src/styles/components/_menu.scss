@@ -1,0 +1,29 @@
+.l-main-menu {
+  .link {
+    font-size: 14px;
+    font-family:
+            system-ui,
+            -apple-system;
+    color: #b6b8bf;
+    position: relative;
+
+    &:hover {
+
+      &:before {
+        content: "";
+        display: block;
+        width: 3px;
+        height: 100%;
+        position: absolute;
+        background: $success-color;
+        left: 0;
+        top: 0;
+        bottom: 0;
+      }
+    }
+  }
+}
+
+.v-navigation-drawer {
+  background: $secondary-color;
+}

@@ -1,43 +1,74 @@
 <script setup lang="ts">
-import {RouteLocationRaw, useRouter} from "vue-router";
-  import * as auth from "../services/auth/auth.ts";
-  import { navigateTo } from "../services/navigation";
-  import { computed } from "vue";
+import { computed } from "vue";
+import { RouteLocationRaw, useRouter } from "vue-router";
 
-  const router = useRouter();
+import * as auth from "@/services/auth/auth.ts";
+import { navigateTo } from "@/services/navigation";
 
-  function navigate(path: RouteLocationRaw) {
-    navigateTo(router, path);
-  }
+const router = useRouter();
 
-  const isAuthorized = computed(() => auth.authorized.value);
+function navigate(path: RouteLocationRaw) {
+  navigateTo(router, path);
+}
 
+const isAuthorized = computed(() => auth.isAuthorized.value);
 </script>
 
 <template>
-  <v-list>
+  <v-list class="l-main-menu">
     <v-list-item
+      v-if="isAuthorized"
+      class="link"
       title="Home"
       @click="navigate('/')"
-      v-if="isAuthorized"
-    />
+    >
+      <template #prepend>
+        <v-icon size="x-small" icon="fa-solid fa-house"></v-icon>
+      </template>
+    </v-list-item>
 
     <v-list-item
+      v-if="isAuthorized"
+      class="link"
       title="Quiz"
       @click="navigate('/quiz')"
-      v-if="isAuthorized"
-    />
+    >
+      <template #prepend>
+        <v-icon size="x-small" icon="fa-solid fa-gamepad"></v-icon>
+      </template>
+    </v-list-item>
 
     <v-list-item
+      v-if="isAuthorized"
+      class="link"
       title="Dictionary"
       @click="navigate('/dictionary')"
-      v-if="isAuthorized"
-    />
+    >
+      <template #prepend>
+        <v-icon size="x-small" icon="fa-solid fa-book"></v-icon>
+      </template>
+    </v-list-item>
 
     <v-list-item
+      v-if="isAuthorized"
+      class="link"
+      title="Progress"
+      @click="navigate('/statistic')"
+    >
+      <template #prepend>
+        <v-icon size="x-small" icon="fa-solid fa-chart-simple"></v-icon>
+      </template>
+    </v-list-item>
+
+    <v-list-item
+      v-if="isAuthorized"
+      class="link"
       title="Archive"
       @click="navigate('/archive')"
-      v-if="isAuthorized"
-    />
+    >
+      <template #prepend>
+        <v-icon size="x-small" icon="fa-solid fa-box-archive"></v-icon>
+      </template>
+    </v-list-item>
   </v-list>
 </template>
