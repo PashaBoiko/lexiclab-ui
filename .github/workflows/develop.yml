@@ -1,0 +1,35 @@
+name: "Develop",
+
+on:
+  pull_request:
+    branches:
+      - develop
+    types:
+      - opened
+      - synchronize
+      - reopened
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install node js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24.0.2'
+          cache: 'pnpm'
+
+      - name: Install pnpm
+        run: npm install -g pnpm
+
+      - name: Success Action
+        run: echo "Success Action"
+
+
+
+
+
