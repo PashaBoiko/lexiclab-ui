@@ -97,7 +97,6 @@ const router = VueRouter.createRouter({
   routes,
 });
 
-// @ts-ignore
 router.beforeEach((to, from, next) => {
   if (to.meta.private && !isAuthorized.value) next({ name: "Login" });
 

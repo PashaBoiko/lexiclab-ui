@@ -18,7 +18,7 @@ const length = computed(() => {
 
 <template>
   <v-breadcrumbs>
-    <template v-for="(crumb, number) in props.items">
+    <template v-for="(crumb, number) in props.items" :key="crumb.title">
       <v-breadcrumbs-item
         :title="crumb.title"
         :to="crumb.to"
