@@ -10,7 +10,7 @@ on:
       - reopened
 
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
 
     steps:
@@ -25,8 +25,8 @@ jobs:
       - name: Install pnpm
         run: npm install -g pnpm
 
-      - name: Success Action
-        run: echo "Success Action"
+      - name: Run lint command
+        run: npm run lint
 
 
 
