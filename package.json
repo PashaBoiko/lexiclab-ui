@@ -9,8 +9,8 @@
     "lint": "eslint src/**/*.ts src/**/*.vue",
     "lint:fix": "pnpm run lint -- --fix",
     "test": "vitest",
-    "prettier": "prettier --check .",
-    "prettier:fix": "pnpm prettier . --write"
+    "format": "prettier --check .",
+    "format:fix": "pnpm prettier . --write"
   },
   "dependencies": {
     "chart.js": "^4.4.3",

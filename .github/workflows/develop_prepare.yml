@@ -38,16 +38,16 @@ jobs:
         run: pnpm install --store-dir=~/.pnpm-store
 
       - name: Run lint command
-        run: npm run lint
+        run: pnpm run lint
 
-      - name: Run prettier command
-        run: npm run prettier
+      - name: Run format command
+        run: pnpm run format
 
       - name: Run test command
-        run: npm run test
+        run: pnpm run test
 
       - name: Run build command
-        run: npm run build
+        run: pnpm run build
 
       - name: ✅ Success message
         if: success()
