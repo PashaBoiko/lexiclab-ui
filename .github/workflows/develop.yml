@@ -1,4 +1,4 @@
-name: Develop
+name: Develop Pull Request Workflow
 
 on:
   pull_request:
@@ -34,3 +34,25 @@ jobs:
 
       - name: Run prettier command
         run: npm run prettier
+  build:
+    name: Build and Test
+    runs-on: ubuntu-latest
+    needs: test
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install node js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22.11.0"
+
+      - name: Install pnpm
+        run: npm install -g pnpm
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Run build command
+        run: npm run build
