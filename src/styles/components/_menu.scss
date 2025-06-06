@@ -2,13 +2,12 @@
   .link {
     font-size: 14px;
     font-family:
-            system-ui,
-            -apple-system;
+      system-ui,
+      -apple-system;
     color: #b6b8bf;
     position: relative;
 
     &:hover {
-
       &:before {
         content: "";
         display: block;

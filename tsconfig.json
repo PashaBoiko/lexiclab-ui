@@ -18,9 +18,7 @@
       "@/*": ["./src/*"]
     },
 
-    "types": [
-      "node"
-    ],
+    "types": ["node"],
 
     /* Linting */
     "strict": true,
