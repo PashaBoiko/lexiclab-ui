@@ -1,19 +1,15 @@
-name: Develop Build, Lint and Test
+name: Develop Deploy
 
 on:
-  pull_request:
+  push:
     branches:
       - develop
-    types:
-      - opened
-      - synchronize
-      - reopened
 
 jobs:
-  prepare:
-    name: Lint, Build & Test
+  deploy:
+    name: Deploy
     runs-on: ubuntu-latest
-
+    
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -33,22 +29,13 @@ jobs:
           key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
           restore-keys: |
             ${{ runner.os }}-pnpm-store-
-
+      
       - name: Install dependencies
         run: pnpm install
-
-      - name: Run lint command
-        run: pnpm run lint
-
-      - name: Run format command
-        run: pnpm run format
 
       - name: Run test command
         run: pnpm run test
 
       - name: Run build command
         run: pnpm run build
-
-      - name: ✅ Success message
-        if: success()
-        run: echo "🎉 Success"
+          
