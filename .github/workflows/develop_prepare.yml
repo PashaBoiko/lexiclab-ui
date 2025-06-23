@@ -49,6 +49,6 @@ jobs:
       - name: Run build command
         run: pnpm run build
 
-      - name: ✅ Success message
+      - name: Success message
         if: success()
         run: echo "🎉 Success"
