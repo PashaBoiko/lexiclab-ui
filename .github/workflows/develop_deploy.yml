@@ -49,6 +49,6 @@ jobs:
       - name: Sync to S3 using AWS CLI
         run: aws s3 sync dist s3://${{ secrets.AWS_S3_BUCKET }} --delete
 
-      - name: ✅ Success message
+      - name: Success message
         if: success()
         run: echo "🎉 Success"
