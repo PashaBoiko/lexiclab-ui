@@ -15,7 +15,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: ./.github/actions/setup
+      - name: Setup environment
+        uses: ./.github/actions/setup
 
       - name: Run lint command
         run: pnpm run lint
