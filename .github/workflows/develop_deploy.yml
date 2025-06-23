@@ -38,3 +38,17 @@ jobs:
 
       - name: Run build command
         run: pnpm run build
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v3
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: eu-central-1
+
+      - name: Sync to S3 using AWS CLI
+        run: aws s3 sync dist s3://${{ secrets.AWS_S3_BUCKET }} --delete
+
+      - name: ✅ Success message
+        if: success()
+        run: echo "🎉 Success"
