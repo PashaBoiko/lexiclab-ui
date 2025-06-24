@@ -21,6 +21,7 @@ A user interface for managing dictionaries, engaging in quizzes and tracking use
 Create the following environment files in the `env` directory:
 
 ### `.env`
+
 ```env
 VITE_SERVER_API_URL=http://localhost:3000
 ```
@@ -38,7 +39,7 @@ VITE_SERVER_API_URL=http://localhost:3000
    ```bash
    pnpm install
    ```
-   
+
 ---
 
 ## 📦 Available Scripts
@@ -51,4 +52,5 @@ VITE_SERVER_API_URL=http://localhost:3000
 - `pnpm run format` — Checks whether the code follows Prettier formatting rules without making any changes.
 - `pnpm run format:fix` — Automatically formats the codebase using Prettier, adhering to predefined style rules.
 - `pnpm run build` — Builds the application for production, optimizing it for deployment.
+
 ---
