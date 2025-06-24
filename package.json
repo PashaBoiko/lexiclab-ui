@@ -23,6 +23,8 @@
   },
   "devDependencies": {
     "@babel/preset-env": "^7.23.9",
+    "@commitlint/cli": "^19.8.1",
+    "@commitlint/config-conventional": "^19.8.1",
     "@eslint/js": "^9.28.0",
     "@fortawesome/fontawesome-free": "^6.5.1",
     "@mdi/font": "^7.4.47",
