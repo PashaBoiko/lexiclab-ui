@@ -43,6 +43,5 @@ test.describe("Login flow", () => {
 
     await expect(page.locator(".v-snackbar")).toBeVisible();
     await expect(page).toHaveURL(new RegExp("#/login"));
-
   });
 });
