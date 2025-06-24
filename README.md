@@ -1,18 +1,54 @@
-# Vue 3 + TypeScript + Vite
+# 🚀 Lexiclab UI
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+A user interface for managing dictionaries, engaging in quizzes and tracking user statistics.
 
-## Recommended IDE Setup
+---
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+## 🛠️ Tech Stack
 
-## Type Support For `.vue` Imports in TS
+- **Vue 3** (for modern UI development)
+- **TypeScript** (for static typing and robust development)
+- **Vite** (for fast development, build tooling, and HMR)
+- **Vue Router** (for navigation and route management)
+- **Pinia** (for state management)
+- **Chart.js** (for visualizing data and statistics)
+- **Sass** (for styling and CSS pre-processing)
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
+---
 
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
+## ⚙️ Environment Variables
 
-1. Disable the built-in TypeScript Extension
-   1. Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-   2. Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
+Create the following environment files in the `env` directory:
+
+### `.env`
+```env
+VITE_SERVER_API_URL=http://localhost:3000
+```
+
+---
+
+## 🚦 Installation
+
+1. **Clone the repository:**
+   ```bash
+   git clone <repository-url>
+   cd dictionary-api
+   ```
+2. **Install dependencies:**
+   ```bash
+   pnpm install
+   ```
+   
+---
+
+## 📦 Available Scripts
+
+- `pnpm run serve` — Start the application with nodemon (development)
+- `pnpm run e2e` — Runs Playwright end-to-end tests to ensure the application works correctly in a browser environment.
+- `pnpm run lint` — Uses ESLint to analyze the code for syntax and style issues in `.ts` and `.vue` files.
+- `pnpm run lint:fix` — Runs ESLint with the `--fix` option to automatically resolve some of the linting issues.
+- `pnpm run test` — Runs unit tests using Vitest, ensuring the integrity of smaller functional components of the application.
+- `pnpm run format` — Checks whether the code follows Prettier formatting rules without making any changes.
+- `pnpm run format:fix` — Automatically formats the codebase using Prettier, adhering to predefined style rules.
+- `pnpm run build` — Builds the application for production, optimizing it for deployment.
+---
