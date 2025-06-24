@@ -26,14 +26,14 @@ test.describe("Login flow", () => {
   });
 
   test("Should login with valid credentials", async ({ page }) => {
-    await expect(page).toHaveURL(new RegExp("/login"));
+    await expect(page).toHaveURL(new RegExp("#/login"));
 
     await page.fill('input[type="email"]', "pashatest@gmail.com");
     await page.fill('input[type="password"]', "test1234");
 
     await page.locator('button[type="submit"]').click();
 
-    await expect(page).not.toHaveURL(new RegExp("/login"));
+    await expect(page).not.toHaveURL(new RegExp("#/login"));
   });
 
   test("Should show error with invalid credentials", async ({ page }) => {
@@ -42,6 +42,6 @@ test.describe("Login flow", () => {
     await page.click('button[type="submit"]');
 
     await expect(page.locator(".v-snackbar")).toBeVisible();
-    await expect(page).toHaveURL(new RegExp("/login"));
+    await expect(page).toHaveURL(new RegExp("#/login"));
   });
 });
