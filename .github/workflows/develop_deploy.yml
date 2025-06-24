@@ -14,16 +14,8 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Install pnpm
-        uses: pnpm/action-setup@v4
-        with:
-          version: 10
-
-      - name: Install node js
-        uses: actions/setup-node@v4
-        with:
-          node-version: "22"
-          cache: "pnpm"
+      - name: Setup environment
+        uses: ./.github/actions/setup
 
       - name: Run test command
         run: pnpm run test
@@ -36,19 +28,8 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Install pnpm
-        uses: pnpm/action-setup@v4
-        with:
-          version: 10
-
-      - name: Install node js
-        uses: actions/setup-node@v4
-        with:
-          node-version: "22"
-          cache: "pnpm"
-
-      - name: Install dependencies
-        run: pnpm install
+      - name: Setup environment
+        uses: ./.github/actions/setup
 
       - name: Run build command
         run: pnpm run build
