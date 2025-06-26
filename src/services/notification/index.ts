@@ -28,7 +28,7 @@ const isToastAvaliable = computed(() => {
   return Boolean(toastState.title || toastState.text);
 });
 
-function setAlertState(state: INotificationState = setDefaultState()) {
+export function setAlertState(state: INotificationState = setDefaultState()) {
   alertState.type = state.type;
   alertState.title = state.title;
   alertState.text = state.text;
