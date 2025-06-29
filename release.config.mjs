@@ -9,16 +9,16 @@ export default {
     [
       "@semantic-release/changelog",
       {
-        "changelogFile": "CHANGELOG.md"
-      }
+        changelogFile: "CHANGELOG.md",
+      },
     ],
     [
       "@semantic-release/git",
       {
-        "assets": ["package.json", "CHANGELOG.md"],
-        "message": "chore(release): ${nextRelease.version} [skip ci]"
-      }
+        assets: ["package.json", "CHANGELOG.md"],
+        message: "chore(release): ${nextRelease.version} [skip ci]",
+      },
     ],
-    "@semantic-release/github"
-  ]
+    "@semantic-release/github",
+  ],
 };
