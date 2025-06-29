@@ -1,0 +1,43 @@
+name: Develop Build, Lint and Test
+
+on:
+  pull_request:
+    branches:
+      - develop
+    types:
+      - opened
+      - synchronize
+      - reopened
+
+jobs:
+  prepare:
+    name: Lint, Build & Test
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup environment
+        uses: ./.github/actions/setup
+
+      - name: Validate PR commits with commitlint
+        run: pnpm commitlint --from ${{ github.event.pull_request.base.sha }} --to ${{ github.event.pull_request.head.sha }} --verbose
+
+      - name: Run lint command
+        run: pnpm run lint
+
+      - name: Run format command
+        run: pnpm run format
+
+      - name: Run test command
+        run: pnpm run test
+
+      - name: Run build command
+        run: pnpm run build
+
+      - name: Success message
+        if: success()
+        run: echo "🎉 Success"

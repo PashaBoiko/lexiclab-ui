@@ -1,14 +1,16 @@
 <template>
   <v-row align="center" justify="center">
     <v-col cols="12" lg="5">
-      <h2 class="text-center mb-6">Sign In</h2>
+      <h2 class="text-center mb-6" data-testid="login-title">Sign In</h2>
 
       <v-form @submit.prevent="onFormSubmit" ref="form">
         <v-text-field
           v-model="formData.email.value"
           :rules="formData.email.rules"
+          type="email"
           label="Email"
           class="mb-2"
+          data-testid="login-email"
         ></v-text-field>
 
         <v-text-field
@@ -17,6 +19,7 @@
           label="Password"
           type="password"
           class="mb-2"
+          data-testid="login-password"
         ></v-text-field>
 
         <v-btn class="mt-3" type="submit"> Submit </v-btn>
