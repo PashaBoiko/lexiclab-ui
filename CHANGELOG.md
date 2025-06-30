@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/PashaBoiko/lexiclab-ui/compare/v1.0.0...v1.0.1) (2025-06-30)
+
+
+### Bug Fixes
+
+* disable tests ([#30](https://github.com/PashaBoiko/lexiclab-ui/issues/30)) ([#31](https://github.com/PashaBoiko/lexiclab-ui/issues/31)) ([a8345ea](https://github.com/PashaBoiko/lexiclab-ui/commit/a8345ea6db511177abdce8cf0294bd168a18a736))
+
 # 1.0.0 (2025-06-29)
 
 ### Features
