@@ -1,4 +1,5 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+</script>
 
 <template>
   <div class="ll-loader">
@@ -15,8 +16,8 @@
   position: absolute;
   right: 0;
   left: 0;
-  top: 0;
   bottom: 0;
+  top: 0;
   display: flex;
   justify-content: center;
   align-items: center;
