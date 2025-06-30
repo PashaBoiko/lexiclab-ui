@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/PashaBoiko/lexiclab-ui/compare/v1.0.1...v1.0.2) (2025-06-30)
+
+
+### Bug Fixes
+
+* small fix ([#32](https://github.com/PashaBoiko/lexiclab-ui/issues/32)) ([#33](https://github.com/PashaBoiko/lexiclab-ui/issues/33)) ([50d5977](https://github.com/PashaBoiko/lexiclab-ui/commit/50d5977d0d401946bbe994eb2fe4b64c2b4fdf3d))
+
 ## [1.0.1](https://github.com/PashaBoiko/lexiclab-ui/compare/v1.0.0...v1.0.1) (2025-06-30)
 
 
