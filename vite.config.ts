@@ -11,4 +11,16 @@ export default defineConfig({
       "@utils": path.resolve(__dirname, "./src/utils"),
     },
   },
+  test: {
+    exclude: ["node_modules", "e2e/**"],
+    environment: "jsdom",
+    server: {
+      deps: {
+        inline: ["vuetify"],
+      },
+    },
+    coverage: {
+      reporter: ["text", "json", "html"],
+    },
+  },
 });
