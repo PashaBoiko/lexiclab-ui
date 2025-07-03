@@ -11,7 +11,7 @@ import Profile from "@/modules/profile/components/Profile.vue";
 import Statistic from "@/modules/statistic/components/Statistic.vue";
 
 import Login from "@/modules/auth/components/Login.vue";
-import Register from "@/modules/auth/components/Register.vue";
+import SignUp from "@/modules/auth/components/SignUp.vue";
 import ResetPassword from "@/modules/auth/components/ResetPassword.vue";
 
 const routes = [
@@ -73,9 +73,9 @@ const routes = [
     },
   },
   {
-    path: "/register",
-    name: "Register",
-    component: Register,
+    path: "/sign-up",
+    name: "SignUp",
+    component: SignUp,
     meta: {
       private: false,
       notAuthorizedOnly: true,
