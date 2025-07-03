@@ -1,3 +1,10 @@
+## [1.0.7](https://github.com/PashaBoiko/lexiclab-ui/compare/v1.0.6...v1.0.7) (2025-07-03)
+
+
+### Bug Fixes
+
+* deployed main to s3 ([75a6999](https://github.com/PashaBoiko/lexiclab-ui/commit/75a6999caa752330733dd0b4d6d549aa283b1d47))
+
 ## [1.0.6](https://github.com/PashaBoiko/lexiclab-ui/compare/v1.0.5...v1.0.6) (2025-07-03)
 
 
