@@ -24,7 +24,7 @@ const drawer = ref(false);
 const rail = ref(false);
 
 async function created() {
-  console.log("Deployed");
+  console.log("Deployed!");
   auth.authorizationStatus();
   drawer.value = auth.isAuthorized.value;
   await configStorage.fetchPublicConfig();
