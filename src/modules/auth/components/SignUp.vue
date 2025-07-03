@@ -1,7 +1,7 @@
 <template>
   <v-row align="center" justify="center">
     <v-col cols="12" lg="6">
-      <h2 class="text-center mb-5">Sign Up</h2>
+      <h2 class="text-center mb-5" data-testid="sign-up-title">Sign Up</h2>
 
       <v-form @submit.prevent="onFormSubmit" ref="form">
         <v-text-field
@@ -9,6 +9,8 @@
           :rules="formData.name.rules"
           label="Name"
           class="mb-2"
+          name="name"
+          data-testid="sign-up-name"
         ></v-text-field>
 
         <v-select
@@ -20,6 +22,8 @@
           :items="languages"
           @update:modelValue="onNativeLanguageChanged"
           class="mb-2"
+          name="nativeLanguage"
+          data-testid="sign-up-native-language-select"
         ></v-select>
 
         <v-select
@@ -31,6 +35,8 @@
           item-title="title"
           :items="foreignLanguageList"
           class="mb-2"
+          name="foreignLanguage"
+          data-testid="sign-up-foreign-language-select"
         ></v-select>
 
         <v-text-field
@@ -39,6 +45,8 @@
           type="email"
           label="Email"
           class="mb-2"
+          name="email"
+          data-testid="sign-up-email"
         ></v-text-field>
 
         <v-text-field
@@ -47,6 +55,8 @@
           type="password"
           label="Password"
           class="mb-2"
+          name="password"
+          data-testid="sign-up-password"
         ></v-text-field>
 
         <v-btn class="mt-3" type="submit"> Submit </v-btn>

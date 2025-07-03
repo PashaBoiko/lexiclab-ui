@@ -6,6 +6,7 @@ on:
       - develop
     paths-ignore:
       - "**.md"
+      - "package.json"
 
 jobs:
   prepare:
