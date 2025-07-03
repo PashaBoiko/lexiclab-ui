@@ -85,12 +85,14 @@ async function logout() {
           text="login"
           theme="secondary"
           @click="navigate('/login')"
+          data-testid="appbar-login-button"
         />
         <v-btn
           variant="text"
           text="Register"
           theme="secondary"
-          @click="navigate('/register')"
+          @click="navigate('/sign-up')"
+          data-testid="appbar-sign-up-button"
         />
       </template>
 

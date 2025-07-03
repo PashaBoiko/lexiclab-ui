@@ -41,7 +41,7 @@ test.describe("Login flow", () => {
     await page.fill('input[type="password"]', "wrong_password");
     await page.click('button[type="submit"]');
 
-    await expect(page.locator(".v-snackbar")).toBeVisible();
+    await expect(page.locator(".v-snackbar .bg-error")).toBeVisible();
     await expect(page).toHaveURL(new RegExp("#/login"));
   });
 });
