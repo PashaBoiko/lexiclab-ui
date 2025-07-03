@@ -1,3 +1,10 @@
+## [1.0.5](https://github.com/PashaBoiko/lexiclab-ui/compare/v1.0.4...v1.0.5) (2025-07-03)
+
+
+### Bug Fixes
+
+* improvements for the job ([f65a6f0](https://github.com/PashaBoiko/lexiclab-ui/commit/f65a6f017987cae704e8721012d9f2b7b2fc44da))
+
 ## [1.0.4](https://github.com/PashaBoiko/lexiclab-ui/compare/v1.0.3...v1.0.4) (2025-06-30)
 
 
