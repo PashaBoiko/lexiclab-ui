@@ -1,0 +1,43 @@
+name: Manual Deploy by Tag
+
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: "Tag to deploy (e.g., v1.2.3)"
+        required: true
+        type: string
+
+jobs:
+  deploy:
+    name: Deploy selected tag to S3
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Fetch all tags and checkout selected one
+        run: |
+          git fetch --all --tags
+          git checkout ${{ github.event.inputs.tag }}
+
+      - name: Setup environment
+        uses: ./.github/actions/setup
+
+      - name: Run build command
+        run: pnpm run build
+        env:
+          VITE_SERVER_API_URL: ${{ secrets.VITE_SERVER_API_URL_DEV }}
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v3
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: eu-central-1
+
+      - name: Sync to S3 using AWS CLI
+        run: aws s3 sync dist s3://${{ secrets.AWS_S3_PROD_BUCKET }} --delete
