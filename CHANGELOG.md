@@ -1,3 +1,11 @@
+## [1.0.8](https://github.com/PashaBoiko/lexiclab-ui/compare/v1.0.7...v1.0.8) (2025-07-04)
+
+
+### Bug Fixes
+
+* manual deployment ([494bba0](https://github.com/PashaBoiko/lexiclab-ui/commit/494bba0d9f2ad396d6505e405f0eccde8bd631f1))
+* run format command ([9f0476a](https://github.com/PashaBoiko/lexiclab-ui/commit/9f0476a3e3145cf52a64d66317541dbe7fcd22da))
+
 ## [1.0.7](https://github.com/PashaBoiko/lexiclab-ui/compare/v1.0.6...v1.0.7) (2025-07-03)
 
 
