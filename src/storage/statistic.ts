@@ -9,7 +9,7 @@ export interface IStatisticModel {
   date: Date;
 }
 
-interface IStatisticState {
+export interface IStatisticState {
   _id: string;
   statistics: IStatisticModel[];
 }

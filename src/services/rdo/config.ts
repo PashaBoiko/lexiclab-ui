@@ -7,7 +7,7 @@ export type ILanguageItem = {
 };
 
 export interface IQuestionType {
-  key: string;
+  title: string;
   value: string;
 }
 

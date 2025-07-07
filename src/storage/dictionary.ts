@@ -7,7 +7,7 @@ import {
 import errorHandler from "../utils/error-handler.ts";
 import { quizRDO, IQuizSavePayload } from "../services/rdo/quiz.ts";
 
-interface IDictionaryState {
+export interface IDictionaryState {
   _id: string;
   dictionary: IDictionaryModel[];
 }

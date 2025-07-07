@@ -14,6 +14,8 @@ import Loader from "@/components/Loader.vue";
 import Menu from "@/components/Menu.vue";
 import ToastPopup from "@/components/ToastPopup.vue";
 
+import pkg from "../package.json";
+
 import { configStorage } from "./storage";
 
 const router = useRouter();
@@ -24,7 +26,7 @@ const drawer = ref(false);
 const rail = ref(false);
 
 async function created() {
-  console.log("Deployed!!");
+  console.log(`App version: ${pkg.version}`);
   auth.authorizationStatus();
   drawer.value = auth.isAuthorized.value;
   await configStorage.fetchPublicConfig();
