@@ -3,7 +3,7 @@ import { configRDO, IQuestionType } from "../services/rdo/config.ts";
 import errorHandler from "../utils/error-handler.ts";
 import { ILanguageItem } from "../services/rdo/config.ts";
 
-interface IConfigState {
+export interface IConfigState {
   languages: ILanguageItem[];
   limitOfCorrectAnswers: number;
   quizAmountOfQuestions: number;
