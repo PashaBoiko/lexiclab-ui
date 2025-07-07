@@ -25,9 +25,7 @@ describe("config-storage", () => {
       languages: [{ key: "en", title: "English" }],
       limitOfCorrectAnswers: 3,
       quizAmountOfQuestions: 10,
-      questionTypes: [
-        { value: "selectQuestion", title: "Select Question"}
-      ]
+      questionTypes: [{ value: "selectQuestion", title: "Select Question" }],
     };
 
     setState(payload);
@@ -40,9 +38,7 @@ describe("config-storage", () => {
       languages: [{ key: "en", title: "English" }],
       limitOfCorrectAnswers: 3,
       quizAmountOfQuestions: 10,
-      questionTypes: [
-        { value: "selectQuestion", title: "Select Question"}
-      ]
+      questionTypes: [{ value: "selectQuestion", title: "Select Question" }],
     };
 
     (configRDO.get as Mock).mockResolvedValue(mockData);

@@ -12,14 +12,14 @@ const vuetify = createVuetify({
 
 global.ResizeObserver = require("resize-observer-polyfill");
 
-describe('Loader.vue', () => {
-  it ('Should render the loader component', () => {
+describe("Loader.vue", () => {
+  it("Should render the loader component", () => {
     const wrapper = mount(Loader, {
       global: {
         plugins: [vuetify],
       },
     });
-    expect(wrapper.find('.ll-loader').exists()).toBe(true);
-    expect(wrapper.find('.v-progress-circular').exists()).toBe(true);
+    expect(wrapper.find(".ll-loader").exists()).toBe(true);
+    expect(wrapper.find(".v-progress-circular").exists()).toBe(true);
   });
-})
+});

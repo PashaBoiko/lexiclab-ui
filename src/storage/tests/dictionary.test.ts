@@ -6,10 +6,14 @@ import {
   refresh,
   addItem,
   editItem,
-  removeItem, IDictionaryState,
+  removeItem,
+  IDictionaryState,
 } from "../dictionary.ts";
-import {dictionaryRDO, IAddDictionaryPayload} from "@/services/rdo/dictionary";
-import {IQuizSavePayload, quizRDO} from "@/services/rdo/quiz";
+import {
+  dictionaryRDO,
+  IAddDictionaryPayload,
+} from "@/services/rdo/dictionary";
+import { IQuizSavePayload, quizRDO } from "@/services/rdo/quiz";
 import errorHandler from "@/utils/error-handler";
 
 import { describe, it, expect, vi, Mock, beforeEach } from "vitest";
@@ -37,7 +41,9 @@ vi.mock("@/utils/error-handler", () => ({
 describe("dictionary-store", () => {
   const mockState: IDictionaryState = {
     _id: "123",
-    dictionary: [{ _id: "321", en: "hello", ua: "привет", description: "", iteration: 0 }],
+    dictionary: [
+      { _id: "321", en: "hello", ua: "привет", description: "", iteration: 0 },
+    ],
   };
 
   beforeEach(() => {
@@ -129,7 +135,7 @@ describe("dictionary-store", () => {
     expect(dictionaryRDO.edit).toHaveBeenCalledWith(
       { en: "edit", ua: "ред" },
       "abc",
-      "id-2"
+      "id-2",
     );
     expect(getState.value).toEqual(mockState);
   });
@@ -139,12 +145,15 @@ describe("dictionary-store", () => {
     setState({ _id: "edit-id", dictionary: [] });
     (dictionaryRDO.edit as Mock).mockRejectedValue(error);
 
-    await editItem({ en: "edit", ua: "правка" } as IAddDictionaryPayload, "item-123");
+    await editItem(
+      { en: "edit", ua: "правка" } as IAddDictionaryPayload,
+      "item-123",
+    );
 
     expect(dictionaryRDO.edit).toHaveBeenCalledWith(
       { en: "edit", ua: "правка" },
       "edit-id",
-      "item-123"
+      "item-123",
     );
     expect(errorHandler).toHaveBeenCalledWith(error);
   });

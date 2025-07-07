@@ -8,61 +8,65 @@ import Breadcrumbs from "@/components/Breadcrumbs.vue";
 const vuetify = createVuetify({
   components,
   directives,
-})
+});
 
 global.ResizeObserver = require("resize-observer-polyfill");
 
-describe('Breadcrumbs.vue', () => {
-  it ('Should render the breadcrumbs component', () => {
+describe("Breadcrumbs.vue", () => {
+  it("Should render the breadcrumbs component", () => {
     const wrapper = mount(Breadcrumbs, {
       props: {
         items: [
-          { title: 'Home', to: '/' },
-          { title: 'About', to: '/about' },
-        ]
+          { title: "Home", to: "/" },
+          { title: "About", to: "/about" },
+        ],
       },
       global: {
         plugins: [vuetify],
       },
     });
-    const links = wrapper.findAll('.v-breadcrumbs-item--link');
-    const divider = wrapper.findAll('.v-breadcrumbs-divider');
+    const links = wrapper.findAll(".v-breadcrumbs-item--link");
+    const divider = wrapper.findAll(".v-breadcrumbs-divider");
 
     expect(links).toHaveLength(2);
     expect(divider).toHaveLength(1);
   });
 
-  it('Should not render breadcrumbs when items are empty', () => {
+  it("Should not render breadcrumbs when items are empty", () => {
     const wrapper = mount(Breadcrumbs, {
       props: {
-        items: []
+        items: [],
       },
       global: {
         plugins: [vuetify],
       },
     });
 
-    const links = wrapper.findAll('.v-breadcrumbs-item--link');
+    const links = wrapper.findAll(".v-breadcrumbs-item--link");
     expect(links).toHaveLength(0);
   });
 
-  it('Test disable property for breadrumbs item', () => {
+  it("Test disable property for breadrumbs item", () => {
     const wrapper = mount(Breadcrumbs, {
       props: {
         items: [
-          { title: 'Home', to: '/' },
-          { title: 'About', to: '/about', disabled: true },
-        ]
+          { title: "Home", to: "/" },
+          { title: "About", to: "/about", disabled: true },
+        ],
       },
       global: {
         plugins: [vuetify],
       },
     });
 
-    const disabledListElement = wrapper.findAll('.v-breadcrumbs-item.v-breadcrumbs-item--disabled');
+    const disabledListElement = wrapper.findAll(
+      ".v-breadcrumbs-item.v-breadcrumbs-item--disabled",
+    );
     expect(disabledListElement).toHaveLength(1);
 
-    const disabledLink = wrapper.find('.v-breadcrumbs-item.v-breadcrumbs-item--disabled .v-breadcrumbs-item--link');
-    expect(disabledLink.text()).toBe('About');
+    const disabledLink = wrapper.find(
+      ".v-breadcrumbs-item.v-breadcrumbs-item--disabled .v-breadcrumbs-item--link",
+    );
+    expect(disabledLink.text()).toBe("About");
   });
-})
+});

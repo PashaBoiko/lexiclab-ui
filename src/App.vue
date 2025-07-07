@@ -14,7 +14,7 @@ import Loader from "@/components/Loader.vue";
 import Menu from "@/components/Menu.vue";
 import ToastPopup from "@/components/ToastPopup.vue";
 
-import pkg from '../package.json';
+import pkg from "../package.json";
 
 import { configStorage } from "./storage";
 
